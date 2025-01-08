@@ -3,6 +3,7 @@ def call(String repoUrl, String branch){
     sh "rm -rf ${workingDir}"
     sh "mkdir -p ${workingDir}"
     sh "git clone ${repoUrl} ${workingDir}"
+    sh "cd ${workingDir}"
     sh "git checkout ${branch}"
     return workingDir
 }
